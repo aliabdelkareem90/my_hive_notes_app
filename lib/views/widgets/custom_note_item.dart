@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CustomNoteItem extends StatelessWidget {
   CustomNoteItem({super.key});
 
-  List<Color> colors = [
+  final List<Color> colors = [
     Colors.yellowAccent,
     Colors.greenAccent,
     Colors.redAccent,
@@ -44,7 +44,7 @@ class CustomNoteItem extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.delete_rounded,
-                  color: Colors.black87,
+                  color: Color.fromARGB(190, 0, 0, 0),
                 ),
               ),
             ],

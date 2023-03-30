@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_notes_app/views/widgets/custom_button.dart';
 import 'package:hive_notes_app/views/widgets/custom_textfield.dart';
