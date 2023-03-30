@@ -4,25 +4,31 @@ import 'package:hive_notes_app/constants/constents.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final int maxLines;
+  final void Function(String?)? onSaved;
 
   const CustomTextField({
     required this.hintText,
+    required this.onSaved,
     this.maxLines = 1,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Field is required ';
+        } else {
+          return null;
+        }
+      },
       cursorColor: aPrimaryColor,
       maxLines: maxLines,
-      autofocus: true,
-      // focus shiftting
-      textInputAction:
-          hintText == "Title" ? TextInputAction.next : TextInputAction.done,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.grey),
+        border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(aPrimaryColor),
       ),
@@ -32,7 +38,9 @@ class CustomTextField extends StatelessWidget {
   OutlineInputBorder buildBorder([color]) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: color ?? Colors.white),
+      borderSide: BorderSide(
+        color: color ?? Colors.white,
+      ),
     );
   }
 }
