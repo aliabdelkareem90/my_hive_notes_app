@@ -9,7 +9,7 @@ class CustomNoteItem extends StatelessWidget {
     Colors.yellowAccent,
     Colors.greenAccent,
     Colors.redAccent,
-    Colors.cyanAccent,
+    Colors.pinkAccent,
     Colors.indigoAccent,
     Colors.orangeAccent
   ];
@@ -18,11 +18,11 @@ class CustomNoteItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = 220 + random.nextInt((250 + 1) - 220).toDouble();
+    var height = 200 + random.nextInt((250 + 1) - 200).toDouble();
 
     return Container(
       height: height,
-      padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16),
+      padding: const EdgeInsets.only(top: 16, bottom: 8, left: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: colors[random.nextInt(colors.length)],

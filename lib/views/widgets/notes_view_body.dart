@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hive_notes_app/views/widgets/custom_note_item.dart';
 
-import 'custom_app_bar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class NotesViewBody extends StatelessWidget {
@@ -14,7 +13,10 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 20.0,
+      ),
       child: MasonryGridView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
