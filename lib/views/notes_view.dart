@@ -29,7 +29,11 @@ class _NotesViewState extends State<NotesView> {
           );
           // setState(() {});
         },
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.black87,
+          size: 32,
+        ),
       ),
     );
   }
