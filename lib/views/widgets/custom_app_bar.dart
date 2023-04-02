@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hive_notes_app/views/widgets/custom_icon.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        Text(
-          'Notes',
-          style: TextStyle(
-            fontSize: 28,
-          ),
-        ),
-        CustomIcon()
-      ],
-    );
-  }
+AppBar customAppBar({required String title, required Icon icon}) {
+  return AppBar(
+    title: Text(title),
+    centerTitle: true,
+    actions: [
+      IconButton(
+        onPressed: () {},
+        icon: icon,
+      ),
+    ],
+  );
 }
